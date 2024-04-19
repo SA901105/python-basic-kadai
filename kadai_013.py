@@ -10,6 +10,14 @@ Original file is located at
 def buy_products(price, tax):
     tax = price * 0.1
     total = price + tax
-    print(f"{price}円(税込：{total})円")
+    print(f"{price}円(税込：{total}円)")
 
 buy_products(1000, 100)
+
+def calculate_total_price(price, tax_rate):
+    tax_amount = price * tax_rate / 100
+    total = price + tax_amount
+    return f"{price}円(税込:{total: .0f}円)"
+
+# 消費税10%を適用して商品の合計金額を計算
+print(calculate_total_price(1000, 10))
